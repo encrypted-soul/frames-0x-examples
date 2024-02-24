@@ -16,7 +16,7 @@ export default {
     </frame-button>
     <frame-button
       action="link"
-      target="https://github.com/encrypted-soul/frames-tally-proposals"
+      target="https://github.com/encrypted-soul/frames-0x-examples"
     >
       {😺} View on Github
     </frame-button>
