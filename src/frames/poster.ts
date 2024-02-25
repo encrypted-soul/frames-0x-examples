@@ -1,4 +1,3 @@
-import { getStore } from "@netlify/blobs";
 import { FrameActionDataParsed } from "frames.js";
 const html = String.raw;
 
@@ -10,8 +9,6 @@ export default {
     }
   },
   content: async () => {
-    const store = getStore({name: "gameState", siteID: process.env.NETLIFY_SITE_ID, token: process.env.NETLIFY_AUTH_TOKEN});
-    store.set("count", "0");
     return html`
     <frame-image src="/images/poster.png" />
     <frame-button> {🚀} Lets get started </frame-button>
