@@ -79,9 +79,9 @@ const respondWithFrame = async (
   const index = await landingPage(frame);
   const options: GetFrameHtmlOptions = {
     og: {
-      title: "🔳 Tally Active Proposals",
+      title: "🔳 0x examples",
     },
-    title: "🔳 Tally Active Proposals",
+    title: "🔳 0x examples",
     htmlBody: index.body,
     htmlHead: index.head,
   };
