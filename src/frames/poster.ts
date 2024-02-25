@@ -1,3 +1,4 @@
+import { getStore } from "@netlify/blobs";
 import { FrameActionDataParsed } from "frames.js";
 const html = String.raw;
 
@@ -8,7 +9,10 @@ export default {
       return `count`;
     }
   },
-  content: () => html`
+  content: async () => {
+    const store = getStore("gameState");
+    store.set("count", "0");
+    return html`
     <frame-image src="/images/poster.png" />
     <frame-button> {🚀} Lets get started </frame-button>
     <frame-button
@@ -17,5 +21,6 @@ export default {
     >
       {😺} View on Github
     </frame-button>
-  `,
+  `;
+  },
 };

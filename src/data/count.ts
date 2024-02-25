@@ -11,9 +11,18 @@ const getCount = async () => {
 const incrementCount = async () => {
   const store = getStore("gameState");
   const rawCount = await store.get("count");
-  const newCount = parseInt(rawCount) + 1;
+  let newCount = null;
+  if (rawCount === "NaN") {
+    newCount = 1;
+  }
+  else {
+    newCount = parseInt(rawCount) + 1;
+    console.log("the new count is")
+    console.log(newCount)
+  }
   await store.set("count", newCount.toString());
   return newCount;
+
 };
 
 const decrementCount = async () => {
