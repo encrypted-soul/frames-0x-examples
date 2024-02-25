@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/62ce69dc-2524-4010-b530-c1a7ff0cb724/deploy-status)](https://app.netlify.com/sites/tally-proposals-frame/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d1ca0961-5110-47fa-a102-e6553280c282/deploy-status)](https://app.netlify.com/sites/frames-0x/deploys)
 
 This repository contains the code for a simple farcaster frame and was built using this repo as a template - https://github.com/depatchedmode/simplest-frame/tree/main.
 
