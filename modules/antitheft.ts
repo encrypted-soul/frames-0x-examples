@@ -2,7 +2,7 @@ import { getStore } from '@netlify/blobs';
 
 // Utility functions to abstract the fetching and setting operations
 const fetchData = async (key) => {
-    const store = getStore('antiTheft');
+    const store = getStore({name: "antiTheft", siteID: process.env.NETLIFY_SITE_ID, token: process.env.NETLIFY_AUTH_TOKEN});
     let data = await store.get(key, { type: 'json' } ) || [];
     if (!data.length) {
         data = process.env[key] ? JSON.parse(process.env[key]) : [];
@@ -11,7 +11,7 @@ const fetchData = async (key) => {
 };
 
 const setData = async (key, data) => {
-    const store = getStore('antiTheft');
+    const store = getStore({name: "antiTheft", siteID: process.env.NETLIFY_SITE_ID, token: process.env.NETLIFY_AUTH_TOKEN});
     await store.setJSON(key, data);
     return data;
 };
@@ -68,7 +68,7 @@ const isFrameStolen = async (frameMessage) => {
 
     // record the theft
     if (isStolen) {
-        const store = getStore('stolenFrames');
+        const store = getStore({name: "stolenFrames", siteID: process.env.NETLIFY_SITE_ID, token: process.env.NETLIFY_AUTH_TOKEN});
         const stolenFrame = await store.get(castHash, { type: 'json' }) || {
             castHash,
             castAuthorID,
